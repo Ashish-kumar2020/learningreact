@@ -8,13 +8,25 @@
 </head>
 <body>
     <div id="root">
-
+        
     </div>
+
+    <!-- Added React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
     <script>
-        const heading = document.createElement('h1');
-        heading.innerHTML = "Hello from Javascript";
-        const root = document.getElementById('root');
-        root.appendChild(heading);
+        const heading = React.createElement('h1',{id: "h1"},"Hello From React");
+        const root = ReactDOM.createRoot(document.getElementById('root'));    
+        // root.render(heading);
+        // craeting Nested Element using react
+        const parent = React.createElement('div',{id: 'parent'},[
+            React.createElement('div',{id: 'child'},[
+                React.createElement('h1',{id: 'chidElement'},"Hi From Nested Element")
+            ])
+        ])
+
+        root.render(parent)
     </script>
 </body>
 </html>
