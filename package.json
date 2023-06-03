@@ -1,0 +1,27 @@
+{
+  "name": "learningreact",
+  "version": "1.0.0",
+  "description": "In this I will be Learning React from Basic to advanced with thel of a food ordering website",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashish-kumar2020/learningreact.git"
+  },
+  "keywords": [
+    "react",
+    "project",
+    "react",
+    "basic",
+    "advanced",
+    "react"
+  ],
+  "author": "Ashish Kumar Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ashish-kumar2020/learningreact/issues"
+  },
+  "homepage": "https://github.com/Ashish-kumar2020/learningreact#readme"
+}
