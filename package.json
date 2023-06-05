@@ -4,6 +4,8 @@
   "description": "In this I will be Learning React from Basic to advanced with thel of a food ordering website",
   "main": "index.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -23,5 +25,17 @@
   "bugs": {
     "url": "https://github.com/Ashish-kumar2020/learningreact/issues"
   },
-  "homepage": "https://github.com/Ashish-kumar2020/learningreact#readme"
+  "homepage": "https://github.com/Ashish-kumar2020/learningreact#readme",
+  "dependencies": {
+    "browserslist": "^4.21.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.1",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
