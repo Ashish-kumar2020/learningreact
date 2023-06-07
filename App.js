@@ -12,7 +12,7 @@ import ReactDOM from "react-dom/client";
 //   ]),
 // ]);
 
-// console.log(parent); // object
+// console.log(parent); // object 
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 
