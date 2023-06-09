@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-list{
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+}
+
+.nav-list:hover{
+    color: orange;
+    font-size: 18px;
+    
+}
