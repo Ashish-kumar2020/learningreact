@@ -14,20 +14,36 @@ const RestaurantCard = (props) => {
 
   
     return (
-      <div className="res-card " style={{ backgroundColor: "#f0f0f0" }}>
-        <img
-          className="res-logo"
-          alt="res-logo"
-          src={
-            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-            cloudinaryImageId
-          }
-        />
-        <h3>{name}</h3>
-        <h4>{cuisines.join(", ")}</h4>
-        <h4>{avgRating} stars</h4>
-        <h4>₹{costForTwo / 100} FOR TWO</h4>
-        <h4>{deliveryTime} minutes</h4>
+      <div className="res-card h-[350px] mx-[5px] mt-[20px] shadow-lg border hover:border-gray-600">
+        <div className="p-[22px]">
+          <div className="overflow-hidden">
+              <img
+                className="res-logo w-[260px]  transform transition-transform duration-300 ease-in-out hover:scale-110"
+                alt="res-logo"
+                src={
+                  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+                  cloudinaryImageId
+                }
+              />
+
+          </div>
+            <h3 className="mt-[12px]">{name.slice(0,24)}</h3>
+            <h4 className="text-[12px]">{cuisines.slice(0, 3).join(", ")}</h4>
+            <div className="additional-container flex mt-[7px]">
+              <div className="rating-container w-[50px] bg-green-600 h-[23px] ">
+                <h4 className="text-white text-[13px] ml-[6px] mt-[2px]">★ {avgRating}</h4>
+              </div>
+              <div className="delivery-time">
+                  <h4 className="text-[13px] ml-[50px] mt-[2px]">{deliveryTime} min</h4>
+              </div> 
+              <div className="cost-for-two">
+                  <h4 className="text-[13px] ml-[40px] mt-[2px]">₹{costForTwo / 100} For Two</h4>
+              </div> 
+            </div>
+            <div className="ml-[90px] mt-[30px] text-blue-400 ">
+              <button>Quick view</button>
+            </div>
+        </div>
       </div>
     );
   };
