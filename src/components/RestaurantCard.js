@@ -1,4 +1,6 @@
 
+import { useState } from "react";
+
 const RestaurantCard = (props) => {
     
 
@@ -12,7 +14,15 @@ const RestaurantCard = (props) => {
         deliveryTime
     } = resData?.data
 
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+    };
   
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+    };
     return (
       <div className="res-card h-[350px] mx-[5px] mt-[20px] shadow-lg border hover:border-gray-600">
         <div className="p-[22px]">
@@ -41,8 +51,14 @@ const RestaurantCard = (props) => {
               </div> 
             </div>
             <div className="ml-[90px] mt-[30px] text-blue-400 ">
-              <button>Quick view</button>
+              <button onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}>Quick view</button>
             </div>
+                  {isHovered && (
+              <div className="z-[20] position-fixed h-[351px] mt-[-326px] ml-[298px]">
+                This component is visible on button hover.
+              </div>
+      )}
         </div>
       </div>
     );
