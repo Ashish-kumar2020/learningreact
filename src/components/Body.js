@@ -1,5 +1,5 @@
+
 import RestaurantCard from "./RestaurantCard";
-import { resList } from "../utils/dummyData";
 import { useState , useEffect } from "react";
 const Body = () => {
 
@@ -24,6 +24,34 @@ const Body = () => {
     setFilterRestaurantData(json?.data?.cards[2]?.data?.data?.cards);
   }
 
+  // filter functions
+  const Relevance = ()=>{
+    setFilterRestaurantData(restaurant)
+  }
+
+  const deliveryTime = ()=>{
+    const filteredList = restaurant.filter(
+      (res) => res.data.deliveryTime < 30
+    );
+    setFilterRestaurantData(filteredList)
+  }
+
+  const rating = ()=>{
+    const filterRating = restaurant.filter((res)=>
+      res.data.avgRating > 4
+    );
+    setFilterRestaurantData(filterRating)
+  }
+
+  const lowToHigh = ()=>{
+    const sortedProducts = [...restaurant].sort((a, b) => a.data.costForTwo - b.data.costForTwo);
+    setFilterRestaurantData(sortedProducts)
+  }
+
+  const highToLow = ()=>{
+    const sortedProductsHighToLow = [...restaurant].sort((a, b) =>b.data.costForTwo - a.data.costForTwo);
+    setFilterRestaurantData(sortedProductsHighToLow)
+  }
   return (
       <>
         <div className="search-container flex justify-center mt-[40px]">
@@ -44,6 +72,14 @@ const Body = () => {
               console.log(filteredRestaurant)
             }}> 🔎 Search</button>
         </div>
+        <div className="h-[50px] mt-[30px] ml-[320px] w-[950px]">
+            <button className="border mx-[12px] mt-[5px] p-[5px] bg-slate-500" onClick={Relevance}>Relevance</button>
+            <button className="border mx-[12px] mt-[5px] p-[5px] bg-slate-500" onClick={deliveryTime}>Delivery Time</button>
+            <button className="border mx-[12px] mt-[5px] p-[5px] bg-slate-500" onClick={rating}>Rating</button>
+            <button className="border mx-[12px] mt-[5px] p-[5px] bg-slate-500" onClick={lowToHigh}>Cost: Low to High</button>
+            <button className="border mx-[12px] mt-[5px] p-[5px] bg-slate-500" onClick={highToLow}>Cost: High to Low</button>
+        
+       </div>
         <div className="body my-[40px] mx-[40px]">
           <div className="res-container flex flex-wrap">
             {filterRestaurantData.map((res)=>(
