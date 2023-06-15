@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_API } from "../utils/constants";
+import Accordion from "./Accordion";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
@@ -43,6 +44,11 @@ const RestaurantMenu = () => {
           </li>
         ))}
       </ul>
+      <div>
+      <Accordion title="Accordion 1" content="Content for Accordion 1" />
+      <Accordion title="Accordion 2" content="Content for Accordion 2" />
+      <Accordion title="Accordion 3" content="Content for Accordion 3" />
+    </div>
     </div>
   );
 };
