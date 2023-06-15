@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Header = ()=>{
@@ -11,10 +12,18 @@ const Header = ()=>{
             </div>
             <div className="nav-items">
                 <ul className="flex py-6 mt-[5px]">
-                    <li className="nav-list px-5 cursor-pointer">Home</li>
-                    <li className="nav-list px-5 cursor-pointer" >About Us</li>
-                    <li className="nav-list px-5 cursor-pointer">Contact Us</li>
-                    <li className="nav-list px-5 cursor-pointer">Cart</li>
+                   <Link to="/"> 
+                        <li className="nav-list px-5 cursor-pointer">Home</li>
+                    </Link>
+                    <Link to="/about">
+                        <li className="nav-list px-5 cursor-pointer" >About Us</li>
+                    </Link>
+                   <Link to="/contact">
+                         <li className="nav-list px-5 cursor-pointer">Contact Us</li>
+                   </Link>
+                   <Link to="/cart">
+                         <li className="nav-list px-5 cursor-pointer">Cart</li>
+                   </Link>
                 </ul>
             </div>
             <div>
